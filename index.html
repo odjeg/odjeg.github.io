@@ -5,80 +5,69 @@
     <title>数据助手</title>
 </head>
 <style type="text/css">
-    .tablehead {
-        table-layout:fixed;
-        clear:both;
-        width:100%;
-        height:40px;
-        border:#ccc 1px solid;
-        margin-top:10px;
-        background-color:#eee;
-    }
-    .tablebody {
-        table-layout:fixed;
-        clear:both;
-        width:100%;
-        margin-top:-1px;
-    }
-    table td {
-        border:#ccc 1px solid;
-        text-align:center;
-        word-break: break-all;
-    }
-    table tr {
-        width:100%;
-        height:40px;
-    }
+    table,tr,td,th{
+    border:1px solid #000000;
+    border-collapse: collapse;
+    font-weight:lighter;
+    font-size: small;
+    table-layout: fixed;
+    height: 20px;
+    text-align: center;
+}
+th{
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+thead tr{
+    background-color: lightblue;
+}
+tbody tr:nth-child(odd){
+    background-color: #f5e6e6;
+}
+table{
+    width: 100%;
+}
     a{
         text-decoration:none;
     }
 </style>
 <body>
-<table class="tablehead">
-    <thead>
-    <th>用户名</th>
-    <th>链接</th>
-    <th>md5</th>
-    <th>sha1</th>
-    <th>sha256</th>
-    <th>sha384</th>
-    <th>sha512</th>
-    </thead>
-</table>
-<table class="tablebody">
-    <tr>
-        <td>明日方舟</td>
-        <td><a href="https://www.aliyundrive.com/s/XD2SoQcYMaX" style="color:green">5555734_直播弹幕_2022-04-23</a></td>
-        <td>44686540FFC0ECFB72C352769ACE3E50</td>
-        <td>2BAB288C8A626F59AE0494BCFB6BF72E8AAB443E</td>
-        <td>329B960AD64E5CFEC93CE2810C79678EDCB86C68946FB12B5809673B50CE403C</td>
-        <td>4B9D5D9352DEB2C37B7035C722B2717870414F1DCC134BDA86448EC426E20D2B92D6775B4D27CA074E0E5081586DE1A5</td>
-        <td>68F4511AFAA583B04D41E0512D45685BC786B1313F67406271215CE788B12A22B5F809D1A59F6DF2EC02FD853EFB960E53AF1A91F6BE392EC712A88D661EB8CC</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.aliyundrive.com/s/7XqazJLPNnT">34348_直播弹幕_2022-04-22</a></td>
-        <td>FFCE1A84CE224DCC0444F4EB1C2E7F90</td>
-        <td>FC3A268A52A60CCEF914AAE91ED801EF6AA0C8DF</td>
-        <td>ACAC27AB1336A73CF0C68E24F2AABEB91EFFE7DF48DB431C318C30F1B5E9C95B</td>
-        <td>1046088FA270642C1DE75607B74D907378AF05BD841A053E5822201C1B4199AD2E42960FD2C884FF244D0C2DEE4101AE</td>
-        <td>BC6A726D019B3E9574F134CFE918A9EA91BA10767727E403BF256F7797B300310B43645FE6C7768071CD61AAE0EEB0EEC62F60A5AA9F740839B95536FE94E3C8</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.aliyundrive.com/s/uqenfBFj7aR">21144080_直播弹幕_2022-04-22</a></td>
-        <td>FFCE1A84CE224DCC0444F4EB1C2E7F90</td>
-        <td>FC3A268A52A60CCEF914AAE91ED801EF6AA0C8DF</td>
-        <td>ACAC27AB1336A73CF0C68E24F2AABEB91EFFE7DF48DB431C318C30F1B5E9C95B</td>
-        <td>1046088FA270642C1DE75607B74D907378AF05BD841A053E5822201C1B4199AD2E42960FD2C884FF244D0C2DEE4101AE</td>
-        <td>BC6A726D019B3E9574F134CFE918A9EA91BA10767727E403BF256F7797B300310B43645FE6C7768071CD61AAE0EEB0EEC62F60A5AA9F740839B95536FE94E3C8</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.aliyundrive.com/s/uqenfBFj7aR">21144080_直播弹幕_2022-04-22</a></td>
-        <td>FFCE1A84CE224DCC0444F4EB1C2E7F90</td>
-        <td>FC3A268A52A60CCEF914AAE91ED801EF6AA0C8DF</td>
-        <td>ACAC27AB1336A73CF0C68E24F2AABEB91EFFE7DF48DB431C318C30F1B5E9C95B</td>
-        <td>1046088FA270642C1DE75607B74D907378AF05BD841A053E5822201C1B4199AD2E42960FD2C884FF244D0C2DEE4101AE</td>
-        <td>BC6A726D019B3E9574F134CFE918A9EA91BA10767727E403BF256F7797B300310B43645FE6C7768071CD61AAE0EEB0EEC62F60A5AA9F740839B95536FE94E3C8</td>
-    </tr>
-</table>
+<div class="content">
+    <table>
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>UID</th>
+            <th>直播间ID</th>
+            <th>数据链接</th>
+            <th>获取日期</th>
+            <th>文件类型</th>
+            <th>数据类型</th>
+            <th>md5</th>
+            <th>sha1</th>
+            <th>sha256</th>
+            <th>sha384</th>
+            <th>sha512</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>原神</th>
+            <th>401742377</th>
+            <th>21987615</th>
+            <th><a href="https://pan.baidu.com/s/1uA2I7gMjjRsoB-rAsHV2Wg?pwd=wgr4">百度网盘</a> </th>
+            <th>2022-5-20</th>
+            <th>txt</th>
+            <th>json</th>
+            <th>758A05CB1E2C43A321F4DADCD06A17F7</th>
+            <th>1945125CFD4DDDECB8CDF3390E8A232E88A2658F</th>
+            <th>C749FC4915F3CE56CAB349871C8B45901C12C58A4CED8EE91A11833646018559</th>
+            <th>E251105BEC361C0E29EF34CF5D17D5D4175798DB786223A8DD0C1A73B3171F91C1240C95D935BB4744AEB0D51FB0F2E4</th>
+            <th>4F4E43B25324A90C6A89127B4B53A70CB764608A9B9A74240B657050BA87591149F57F66BBB3317FD8D806B989FB31E63F4A853EB1A88FBE55732D50B922E6DA</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
